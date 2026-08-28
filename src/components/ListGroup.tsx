@@ -1,12 +1,15 @@
 import { useState } from "react";
 
-function ListGroup() {
-    let area = ['Dhaka', 'Rangpur', 'Barishal', 'Rajshahi', 'Khulna', 'Sylhet', 'Mymenshingh'];
+interface Props{
+    area: string[];
+    heading: string;
+}
+function ListGroup({area, heading}: Props) {
 
     const disable = 3;
     const [select, setSelect] = useState(-1);
     return <>
-        <h1>List Items</h1>
+        <h1>{heading}</h1>
         {area.length == 0 && <p>No Item Found</p>}
         <div className="list-group">
             {area.map((items, index) => (
