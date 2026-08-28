@@ -3,6 +3,7 @@ function ListGroup() {
     let area = ['Dhaka', 'Rangpur', 'Barishal', 'Rajshahi', 'Khulna', 'Sylhet', 'Mymenshingh'];
 
     const select = 0;
+    const disable = 3;
     const handleCLick = (event: MouseEvent<HTMLAnchorElement>) => {
         event.preventDefault;
         console.log(event)
@@ -13,7 +14,7 @@ function ListGroup() {
         <div className="list-group">
             {area.map((items, index) => (
                 <a key={items} href="#"
-                    className={select == index ? 'list-group-item list-group-item-action active' : 'list-group-item list-group-item-action'}
+                    className={select == index ? 'list-group-item list-group-item-action active' : disable == index ? 'list-group-item list-group-item-action disabled' : 'list-group-item list-group-item-action'}
                     onClick={handleCLick}>{items}
                 </a>
             ))}
