@@ -1,8 +1,12 @@
 import ListGroup from "./components/ListGroup";
-let area = ['Dhaka', 'Rangpur', 'Barishal', 'Rajshahi', 'Khulna', 'Sylhet', 'Mymenshingh'];
 
 function App() {
-  return <div><ListGroup area={area} heading="Cities" /></div>
+  let area = ['Dhaka', 'Rangpur', 'Barishal', 'Rajshahi', 'Khulna', 'Sylhet', 'Mymenshingh'];
+
+  const selectHandler = (item: string) => {
+    console.log(item);
+  }
+  return <div><ListGroup area={area} heading="Cities" onSelectItem={selectHandler} /></div>
 }
 
 export default App;
