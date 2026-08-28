@@ -2,6 +2,7 @@ import type { MouseEvent } from "react";
 function ListGroup() {
     let area = ['Dhaka', 'Rangpur', 'Barishal', 'Rajshahi', 'Khulna', 'Sylhet', 'Mymenshingh'];
 
+    const select = 0;
     const handleCLick = (event: MouseEvent<HTMLAnchorElement>) => {
         event.preventDefault;
         console.log(event)
@@ -10,11 +11,12 @@ function ListGroup() {
         <h1>List Items</h1>
         {area.length == 0 && <p>No Item Found</p>}
         <div className="list-group">
-            {area.map((items) => (
+            {area.map((items, index) => (
                 <a key={items} href="#"
-                    className="list-group-item list-group-item-action"
-                    onClick={handleCLick}>
-                </a>))}
+                    className={select == index ? 'list-group-item list-group-item-action active' : 'list-group-item list-group-item-action'}
+                    onClick={handleCLick}>{items}
+                </a>
+            ))}
         </div>
     </>;
 }
