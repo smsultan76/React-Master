@@ -1,14 +1,16 @@
 import { useState } from "react";
+import useRouter from "../hooks/useRoute";
 
-interface Props{
+interface Props {
     area: string[];
     heading: string;
     onSelectItem: (items: string) => void;
 }
-function ListGroup({area, heading, onSelectItem}: Props) {
+function ListGroup({ area, heading, onSelectItem }: Props) {
 
     const disable = 3;
     const [select, setSelect] = useState(-1);
+    const { navigate } = useRouter();
     return <>
         <h1>{heading}</h1>
         {area.length == 0 && <p>No Item Found</p>}
@@ -16,7 +18,13 @@ function ListGroup({area, heading, onSelectItem}: Props) {
             {area.map((items, index) => (
                 <a key={items} href={`area/${items.toLowerCase()}`}
                     className={select == index ? 'list-group-item list-group-item-action active' : disable == index ? 'list-group-item list-group-item-action disabled' : 'list-group-item list-group-item-action'}
-                    onClick={() => {setSelect(index); onSelectItem(items)}}>{items}
+                    onClick={(event) => {
+                        event.preventDefault();
+                        setSelect(index);
+                        onSelectItem(items);
+                        navigate(`area/${items.toLowerCase()}`);
+                    }}>
+                    {items}
                 </a>
             ))}
         </div>
