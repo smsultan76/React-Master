@@ -14,7 +14,7 @@ function ListGroup({area, heading, onSelectItem}: Props) {
         {area.length == 0 && <p>No Item Found</p>}
         <div className="list-group">
             {area.map((items, index) => (
-                <a key={items} href="#"
+                <a key={items} href={`area/${items.toLowerCase()}`}
                     className={select == index ? 'list-group-item list-group-item-action active' : disable == index ? 'list-group-item list-group-item-action disabled' : 'list-group-item list-group-item-action'}
                     onClick={() => {setSelect(index); onSelectItem(items)}}>{items}
                 </a>
