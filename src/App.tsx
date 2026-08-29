@@ -1,6 +1,7 @@
 import ListGroup from "./components/ListGroup";
 import { area } from "./config/data";
 import useRouter from "./hooks/useRoute";
+import AboutPage from "./pages/about";
 
 function App() {
   const { path } = useRouter();
@@ -9,6 +10,7 @@ function App() {
   }
   if (path == "/") return <div><ListGroup area={area} heading="Cities" onSelectItem={selectHandler} /></div>
   if (path.startsWith("/area/")) return <AreaPage />
+  if (path == '/about') return <AboutPage />
   return <NotFound />
 }
 function AreaPage() {
