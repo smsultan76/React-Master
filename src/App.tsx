@@ -1,7 +1,7 @@
 import ListGroup from "./components/ListGroup";
+import { area } from "./config/data";
 
 function App() {
-  let area = ['Dhaka', 'Rangpur', 'Barishal', 'Rajshahi', 'Khulna', 'Sylhet', 'Mymenshingh'];
 
   const selectHandler = (item: string) => {
     console.log(item);
