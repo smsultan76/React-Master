@@ -8,7 +8,10 @@ function App() {
   const selectHandler = (item: string) => {
     console.log(item);
   }
-  if (path == "/") return <div><ListGroup area={area} heading="Cities" onSelectItem={selectHandler} /></div>
+  if (path == "/") return <div>
+    <a href="about">about</a>
+    <ListGroup area={area} heading="Cities" onSelectItem={selectHandler} />
+  </div>
   if (path.startsWith("/area/")) return <AreaPage />
   if (path == '/about') return <AboutPage />
   return <NotFound />
