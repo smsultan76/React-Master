@@ -1,0 +1,29 @@
+.about-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8fafc;
+  padding: 2rem;
+}
+
+.about-container {
+  max-width: 700px;
+  padding: 3rem;
+  text-align: center;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.about-container h1 {
+  margin-bottom: 1rem;
+  color: #1e293b;
+  font-size: 2.5rem;
+}
+
+.about-container p {
+  color: #64748b;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
