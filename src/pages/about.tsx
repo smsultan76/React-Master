@@ -4,6 +4,7 @@ function AboutPage() {
   return (
     <main className="about-page">
       <section className="about-container">
+        <a href="/" className="home">&#8592; Home</a>
         <h1>About Us</h1>
         <p>
           Welcome to our website. We’re focused on creating simple,

@@ -27,3 +27,9 @@
   font-size: 1.1rem;
   line-height: 1.7;
 }
+
+.home {
+    text-align: left;
+    text-decoration: none;
+    display: flex;
+}
