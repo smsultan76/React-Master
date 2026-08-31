@@ -1,3 +1,5 @@
+import "./about.css";
+
 function AboutPage() {
   return (
     <main className="about-page">
