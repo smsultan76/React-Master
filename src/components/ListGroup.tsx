@@ -19,10 +19,8 @@ function ListGroup({ area, heading, onSelectItem }: Props) {
                 <a key={items} href={`area/${items.toLowerCase()}`}
                     className={select == index ? 'list-group-item list-group-item-action active' : disable == index ? 'list-group-item list-group-item-action disabled' : 'list-group-item list-group-item-action'}
                     onClick={(event) => {
-                        event.preventDefault();
                         setSelect(index);
                         onSelectItem(items);
-                        navigate(`area/${items.toLowerCase()}`);
                     }}>
                     {items}
                 </a>
