@@ -6,7 +6,6 @@ function useRouter() {
     const navigate = (url: string) => {
         window.history.pushState({}, "", url);
         setPath(url);
-        window.location.reload();
     }
     useEffect(() => {
         const handlePopState = () => {
