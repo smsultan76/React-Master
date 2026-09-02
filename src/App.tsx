@@ -9,7 +9,7 @@ function App() {
     console.log(item);
   }
   if (path == "/") return <div>
-    <a href="about">about</a>
+    <a href="about" className="text-xl text-decoration-none">about</a>
     <ListGroup area={area} heading="Cities" onSelectItem={selectHandler} />
   </div>
   if (path.startsWith("/area/")) return <AreaPage />
