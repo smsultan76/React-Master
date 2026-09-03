@@ -2,13 +2,15 @@ import ListGroup from "./components/ListGroup";
 import { area } from "./config/data";
 import useRouter from "./hooks/useRoute";
 import AboutPage from "./pages/about";
+import HomePage from "./pages/home";
 
 function App() {
   const { path } = useRouter();
   const selectHandler = (item: string) => {
     console.log(item);
   }
-  if (path == "/") return <div>
+  if (path == '/') return <HomePage />
+  if (path == "/list") return <div>
     <a href="about" className="text-xl text-decoration-none">about</a>
     <ListGroup area={area} heading="Cities" onSelectItem={selectHandler} />
   </div>
