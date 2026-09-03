@@ -1,3 +1,4 @@
+import LanguageSwitcher from "./components/LangSwitcher";
 import ListGroup from "./components/ListGroup";
 import { area } from "./config/data";
 import useRouter from "./hooks/useRoute";
@@ -9,7 +10,7 @@ function App() {
   const selectHandler = (item: string) => {
     console.log(item);
   }
-  if (path == '/') return <HomePage />
+  if (path == '/') return <div><HomePage /> <LanguageSwitcher /></div>
   if (path == "/list") return <div>
     <a href="about" className="text-xl text-decoration-none">about</a>
     <ListGroup area={area} heading="Cities" onSelectItem={selectHandler} />
