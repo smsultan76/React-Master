@@ -14,11 +14,9 @@ i18next.use(initReactI18next).init({
         bn: {
             translation: bn,
         },
-
     },
     lng: savedLang,
     fallbackLng: "en",
-
     interpolation: {
         escapeValue: false,
     },
